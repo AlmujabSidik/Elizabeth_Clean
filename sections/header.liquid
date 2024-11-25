@@ -1,5 +1,4 @@
 {% assign main_menu_linklist = linklists[section.settings.menu].links %}
-
 <div class="relative bg-white" x-data="{mobileMenuOpen: false}">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="flex justify-between  items-center py-6 md:justify-start md:space-x-10">
@@ -8,14 +7,18 @@
       <div class="flex justify-between w-full items-center flex-row-reverse md:flex-1">
         <div class="flex md:justify-start flex-1 truncate justify-center">
           {% if section.settings.brand_logo != blank %}
-          <img src="{{ section.settings.brand_logo | asset_url }}" loading="lazy" width="120" height="70"
+          <a href="{{ routes.root_url }}" class="cursor-pointer">
+            <img src="{{ section.settings.brand_logo | asset_url }}" loading="lazy" width="120" height="70"
             alt="Logo {{ shop.name }}" class="w-14 h-auto">
+          </a>
           {% else %}
           {% if template == 'index' %}
-          <img src="{{ 'logo-shop.svg' | asset_url }}" loading="lazy" width="120" height="70" alt="Logo {{ shop.name }}"
+          <a href="{{ routes.root_url }}" class="cursor-pointer">
+            <img src="{{ 'logo-shop.svg' | asset_url }}" loading="lazy" width="120" height="70" alt="Logo {{ shop.name }}"
             class="w-14 h-auto">
+          </a>
           {% else %}
-          <span class="text-2xl font-bold text-gray-900">{{ shop.name }}</span>
+         <a href="{{ routes.root_url }}" class="cursor-pointer"> <span class="text-2xl font-bold text-gray-900">{{ shop.name }}</span></a>
           {% endif %}
           {% endif %}
         </div>

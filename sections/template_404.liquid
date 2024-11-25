@@ -1,0 +1,49 @@
+<section class="bg-white ">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="mx-auto max-w-screen-sm text-center">
+      <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 ">
+        {{ section.settings.title }}</h1>
+      <p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl ">{{ section.settings.subtext_html }}</p>
+      <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">{{ section.settings.subtext }}</p>
+      <a href="{{ section.settings.button_url }}" class="inline-flex text-white bg-zinc-900 hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-zinc-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-zinc-900 my-4">{{ section.settings.button_text }}</a>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Template 404",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "404 Title",
+        "default": "404"
+      },
+      {
+        "type": "text",
+        "id": "subtext_html",
+        "label": "404 Subtext HTML",
+        "default": "Sorry, we can't find that page. You'll find lots to explore on the home page."
+      },
+      {
+        "type": "textarea",
+        "id": "subtext",
+        "label": "404 Description",
+        "default": "Sorry, we can't find that page. You'll find lots to explore on the home page."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "404 Button Text",
+        "default": "Take me home"
+      }, {
+        "type": "url",
+        "id": "button_url",
+        "label": "404 Button URL",
+        "default": "/"
+      }
+    ]
+  }
+{% endschema %}
